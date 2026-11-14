@@ -438,8 +438,8 @@ S += [H1("8. Distribución del trabajo, repositorio y video"),
       H2("8.2 Video demostrativo"),
       P("Enlace: " + enlace(cfg.get("video_url"), "pendiente")),
       P("Duración de 8 a 10 minutos: arquitectura y división ACID/BASE, ejecución de los scripts en los dos motores, cada prueba "
-        "comparativa con su resultado, la demostración de atomicidad, la evidencia de IA y la reflexión. La narración usa la voz "
-        "clonada del autor generada con IA y se indica en el propio video."),
+        "comparativa con su resultado, la demostración de atomicidad, la evidencia de IA y la reflexión. El video no tiene "
+        "narración: la explicación va en subtítulos (9 min 30 s), con música de fondo original generada por código."),
       H1("9. Conclusiones"),
       B(f"La arquitectura híbrida se justificó con mediciones: para telemetría, MongoDB ingirió {num(x_ing, 1)} veces más rápido, "
         f"usó {num(x_disco, 0)} veces menos disco y analizó todo el hospital {num(x_b4, 1)} veces más rápido que PostgreSQL con JSONB."),

@@ -1,0 +1,5 @@
+Para cerrar, la reflexión. Separar la identidad no es solo una decisión de rendimiento, es una medida de privacidad: una fuga de la base de telemetría expone curvas de saturación de episodios, no personas. Pero seudónimo no es anónimo: con edad, sexo, subregión y fecha, un paciente de un municipio pequeño se puede reidentificar, así que los reportes deben agregar y suprimir celdas pequeñas.
+
+La consistencia eventual también tiene consecuencias clínicas: un tablero con datos de hace 30 segundos es aceptable, una alarma que llega tarde no. Y descartar lecturas es una decisión clínica: los descartes se cuentan y se auditan, no desaparecen en silencio.
+
+En conclusión, no hay un motor ganador, hay datos con necesidades distintas. MongoDB fue mejor para ingerir, almacenar y analizar la telemetría masiva, y Postgres fue indispensable para garantizar que una cama no se asigne dos veces. Esta arquitectura queda lista como base del proyecto integrador. Gracias.

@@ -1,0 +1,7 @@
+Empiezo por la división. Tomé como referencia la tabla del libro del curso sobre arquitecturas híbridas. El modelo ACID ofrece consistencia fuerte y disponibilidad limitada, y sirve como sistema de registro. El modelo BASE ofrece disponibilidad alta y consistencia eventual, y sirve como sistema de análisis.
+
+En la capa ACID, en Postgres, dejé lo que no puede equivocarse: la identidad del paciente, que es un dato sensible según la Ley 1581, los profesionales, los catálogos de diagnósticos y medicamentos, las camas y las hospitalizaciones. Dos pacientes en la misma cama, o un documento duplicado, son errores clínicos.
+
+En la capa BASE, en MongoDB, va la telemetría de los dispositivos y las teleconsultas posteriores al alta. Se escribe sin parar, nunca se modifica, cada sensor trae campos distintos y crece sin límite.
+
+Y hay una pieza que une las dos capas: el registro de dispositivos, que vive en Postgres y dice a qué episodio pertenece cada oxímetro o cada monitor.

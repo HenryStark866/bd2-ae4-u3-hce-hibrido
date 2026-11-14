@@ -1,0 +1,5 @@
+Hola, soy Henry Taborda, de Bases de Datos II. Esta es mi entrega de la tarea Construyendo y comparando ecosistemas híbridos, de la unidad 3, que hice de forma individual.
+
+Este video no tiene narración: los subtítulos explican cada parte.
+
+El reto es dar el paso de un solo motor a una arquitectura híbrida. En la unidad 3, la historia clínica de hospitalización vivía completa en MongoDB, con unas tres tomas de signos vitales al día por paciente. Ahora llegan monitores, oxímetros portátiles, glucómetros continuos y bombas de infusión que reportan cada uno a cinco minutos. La pregunta es qué dato debe vivir en un sistema ACID y cuál en uno BASE, y demostrarlo con mediciones.

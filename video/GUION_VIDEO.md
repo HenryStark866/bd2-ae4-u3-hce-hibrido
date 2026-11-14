@@ -1,7 +1,8 @@
 # Guion del video: AE4-U3, ecosistema híbrido
 
 - **Duración objetivo:** 8 a 10 minutos.
-- **Narración:** voz clonada de Henry Taborda, generada con IA (ElevenLabs). El video lo indica en la portada y en una franja permanente.
+- **Versión entregada:** sin narración. El texto de cada bloque se muestra como subtítulos (`subtitulos/`, cifras en números) con música de fondo original (`musica_fondo.py`); se genera con `render_subtitulado.py`. Enlace: https://youtu.be/3SBGj9TeUA8
+- Los textos de abajo son el guion original, escrito para narración.
 - **Pantalla:** salidas y métricas reales (`resultados/`), diagrama y gráficas (`capturas/`) y secciones del informe.
 
 ## a00_intro

@@ -21,7 +21,8 @@ La misma operación se mide en los dos motores.
 | `scripts/07_generar_capturas.py` | Capturas estilo consola de las salidas reales |
 | `resultados/` | Salidas reales (`salida_0X_*.txt`), `metricas.csv`, `metricas.json` y `b1_ingesta.json` |
 | `ia_evidencia/EVIDENCIA_IA.md` | Prompts, errores reales y aporte de la IA |
-| `video/GUION_VIDEO.md` | Guion del video |
+| `video/GUION_VIDEO.md` | Guion del video. Video (sin narración, con subtítulos): https://youtu.be/3SBGj9TeUA8 |
+| `video/subtitulos/`, `video/musica_fondo.py` | Texto de los subtítulos y generador de la música de fondo original |
 
 ## Reproducir
 

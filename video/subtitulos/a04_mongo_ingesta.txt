@@ -1,0 +1,7 @@
+Después la capa BASE. En MongoDB creo la telemetría como una colección de series de tiempo. MongoDB agrupa las lecturas de un mismo dispositivo en buckets por ventana de tiempo y las comprime.
+
+Aquí encontré una limitación real: MongoDB no permite validadores de esquema en las colecciones de series de tiempo. Por eso la validación de rangos, como saturación entre 50 y 100, se hace en el script de ingesta.
+
+La ingesta genera la telemetría a partir de los signos vitales reales de cada episodio de la unidad 3, interpolando entre una toma y la siguiente. Así, el paciente con neumonía, que en la unidad 3 tenía la alerta de deterioro más alta, muestra en su monitor la misma saturación de 87 a 88 %. También inyecté artefactos de sensor, como una frecuencia cardiaca de 400 por un cable suelto, y la validación descartó 72 lecturas.
+
+El resultado: 306.359 lecturas, con el mismo conteo en los dos motores, porque la misma telemetría también se cargó en Postgres con JSONB, como propone el insumo del curso, para poder comparar.
