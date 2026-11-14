@@ -1,0 +1,51 @@
+NOTICE:  drop cascades to 11 other objects
+DETAIL:  drop cascades to table hce.cie10
+drop cascades to table hce.medicamento
+drop cascades to table hce.paciente
+drop cascades to table hce.paciente_alergia
+drop cascades to table hce.profesional
+drop cascades to table hce.cama
+drop cascades to table hce.hospitalizacion
+drop cascades to table hce.dispositivo
+drop cascades to table hce.asignacion_dispositivo
+drop cascades to view hce.v_episodio_analitico
+drop cascades to table hce.telemetria_jsonb
+                 List of relations
+ Schema |          Name          | Type  |  Owner   
+--------+------------------------+-------+----------
+ hce    | asignacion_dispositivo | table | postgres
+ hce    | cama                   | table | postgres
+ hce    | cie10                  | table | postgres
+ hce    | dispositivo            | table | postgres
+ hce    | hospitalizacion        | table | postgres
+ hce    | medicamento            | table | postgres
+ hce    | paciente               | table | postgres
+ hce    | paciente_alergia       | table | postgres
+ hce    | profesional            | table | postgres
+ hce    | telemetria_jsonb       | table | postgres
+(10 rows)
+
+                                  List of relations
+ Schema |              Name               | Type  |  Owner   |         Table          
+--------+---------------------------------+-------+----------+------------------------
+ hce    | asignacion_dispositivo_pkey     | index | postgres | asignacion_dispositivo
+ hce    | cama_pkey                       | index | postgres | cama
+ hce    | cie10_pkey                      | index | postgres | cie10
+ hce    | dispositivo_pkey                | index | postgres | dispositivo
+ hce    | hospitalizacion_pkey            | index | postgres | hospitalizacion
+ hce    | ix_asignacion_hosp              | index | postgres | asignacion_dispositivo
+ hce    | ix_hosp_servicio_estado         | index | postgres | hospitalizacion
+ hce    | ix_tel_disp_ts                  | index | postgres | telemetria_jsonb
+ hce    | ix_tel_lectura                  | index | postgres | telemetria_jsonb
+ hce    | medicamento_pkey                | index | postgres | medicamento
+ hce    | paciente_alergia_pkey           | index | postgres | paciente_alergia
+ hce    | paciente_pkey                   | index | postgres | paciente
+ hce    | profesional_pkey                | index | postgres | profesional
+ hce    | profesional_registro_medico_key | index | postgres | profesional
+ hce    | telemetria_jsonb_pkey           | index | postgres | telemetria_jsonb
+ hce    | ux_cama_activa                  | index | postgres | hospitalizacion
+ hce    | ux_dispositivo_vigente          | index | postgres | asignacion_dispositivo
+ hce    | ux_paciente_activo              | index | postgres | hospitalizacion
+ hce    | ux_paciente_documento           | index | postgres | paciente
+(19 rows)
+

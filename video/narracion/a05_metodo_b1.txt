@@ -1,0 +1,5 @@
+Vamos al análisis comparativo. Cada consulta se ejecuta tres veces para calentar la caché y quince veces medidas, y reporto la mediana y el percentil noventa y cinco. Antes de comparar tiempos, verifico que los dos motores devuelvan exactamente el mismo resultado.
+
+Un detalle de honestidad: la primera vez que medí, había otro clúster corriendo en la misma máquina virtual de Docker que Postgres. Con esa carga, Postgres llegaba a ser diez veces más lento, mientras que MongoDB casi no cambiaba. Por eso pausé ese clúster solo durante la medición. Comparar con cargas distintas habría dado conclusiones falsas.
+
+La primera prueba es la ingesta. Con la telemetría completa, MongoDB insertó unas treinta y ocho mil lecturas por segundo, y Postgres unas veinte mil: casi el doble. En las ingestas repetidas de cincuenta mil lecturas la diferencia es de más de cuatro veces. Y en disco la diferencia es enorme: la misma telemetría ocupa unos dos coma seis megas en MongoDB y unos ochenta y ocho en Postgres, más de treinta veces más.

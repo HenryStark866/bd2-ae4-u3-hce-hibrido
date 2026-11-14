@@ -1,0 +1,74 @@
+[
+  {
+    "prueba": "B1",
+    "motor": "MongoDB time series",
+    "mediana_ms": 521.9,
+    "p95_ms": 600.2,
+    "n": 5,
+    "lecturas_s": 95799
+  },
+  {
+    "prueba": "B1",
+    "motor": "PostgreSQL JSONB",
+    "mediana_ms": 2329.4,
+    "p95_ms": 2470.0,
+    "n": 5,
+    "lecturas_s": 21464
+  },
+  {
+    "prueba": "B2",
+    "motor": "MongoDB",
+    "mediana_ms": 1.19,
+    "p95_ms": 1.38,
+    "n": 15
+  },
+  {
+    "prueba": "B2",
+    "motor": "PostgreSQL",
+    "mediana_ms": 0.62,
+    "p95_ms": 0.7,
+    "n": 15
+  },
+  {
+    "prueba": "B3",
+    "motor": "MongoDB",
+    "mediana_ms": 2.84,
+    "p95_ms": 3.23,
+    "n": 15
+  },
+  {
+    "prueba": "B3",
+    "motor": "PostgreSQL",
+    "mediana_ms": 2.36,
+    "p95_ms": 2.56,
+    "n": 15
+  },
+  {
+    "prueba": "B4",
+    "motor": "MongoDB",
+    "mediana_ms": 10.28,
+    "p95_ms": 10.8,
+    "n": 15
+  },
+  {
+    "prueba": "B4",
+    "motor": "PostgreSQL",
+    "mediana_ms": 28.51,
+    "p95_ms": 32.07,
+    "n": 15
+  },
+  {
+    "prueba": "B5",
+    "motor": "Hibrido PG + MongoDB",
+    "mediana_ms": 10.72,
+    "p95_ms": 14.68,
+    "n": 15
+  },
+  {
+    "prueba": "B5",
+    "motor": "Solo PostgreSQL (JSONB)",
+    "mediana_ms": 6.98,
+    "p95_ms": 12.56,
+    "n": 15
+  }
+]

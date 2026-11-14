@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+video/audio/
+video/render_video.py
+*.mp3
+*.mp4

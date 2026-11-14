@@ -1,0 +1,50 @@
+
+==================== B1. Ingesta por lotes: 50.000 lecturas x 5 repeticiones ====================
+  B1  MongoDB time series      mediana   0.52 s  ->    95799 lecturas/s  (min 0.45 s, max 0.60 s)
+  B1  PostgreSQL JSONB         mediana   2.33 s  ->    21464 lecturas/s  (min 1.75 s, max 2.47 s)
+
+==================== B2. Ultima lectura del monitor DSP-0062 (HOSP-2026-0029) ====================
+  B2  MongoDB                  mediana      1.19 ms   p95      1.38 ms
+     MongoDB    -> {'ts': datetime.datetime(2026, 11, 8, 11, 59), 'fc': 124, 'fr': 30, 'spo2': 88, 'ta': {'s': 95, 'd': 60}}
+  B2  PostgreSQL               mediana      0.62 ms   p95      0.70 ms
+     PostgreSQL -> 2026-11-08 11:59:00+00:00 {'fc': 124, 'fr': 30, 'spo2': 88, 'ta': {'d': 60, 's': 95}}
+
+==================== B3. Promedio horario de FC y SpO2 de HOSP-2026-0029 en las ultimas 24 h ====================
+  B3  MongoDB                  mediana      2.84 ms   p95      3.23 ms
+  B3  PostgreSQL               mediana      2.36 ms   p95      2.56 ms
+     horas: MongoDB 24 | PostgreSQL 24; primeras 3 (hora, FC, SpO2, n):
+       Mongo 07-11 12:00   123.8  88.0  60 | PG 07-11 12:00   123.8  88.0  60
+       Mongo 07-11 13:00   122.4  87.9  60 | PG 07-11 13:00   122.4  87.9  60
+       Mongo 07-11 14:00   123.2  88.0  60 | PG 07-11 14:00   123.2  88.0  60
+     mismo resultado en los dos motores: True
+
+==================== B4. Episodios con desaturacion (SpO2 < 90 %) en los ultimos 7 dias - todo el hospital ====================
+  B4  MongoDB                  mediana     10.28 ms   p95     10.80 ms
+  B4  PostgreSQL               mediana     28.51 ms   p95     32.07 ms
+     HOSP-2026-0029  lecturas 13651  SpO2 min 87  ultima 08-11 11:59
+     HOSP-2026-0031  lecturas  5722  SpO2 min 88  ultima 08-11 11:59
+     HOSP-2026-0032  lecturas  1931  SpO2 min 86  ultima 05-11 14:19
+     mismo resultado en los dos motores: True
+     plan PostgreSQL: Seq Scan telemetria_jsonb; Seq Scan asignacion_dispositivo | 33.7 ms
+     nota: el operador ->> sobre JSONB no puede usar el indice GIN (jsonb_path_ops solo sirve para @>), por eso recorre la tabla
+
+==================== B5. Tablero de pacientes activos: episodio (PostgreSQL) + telemetria de las ultimas 6 h ====================
+  B5  Hibrido PG + MongoDB     mediana     10.72 ms   p95     14.68 ms
+  B5  Solo PostgreSQL (JSONB)  mediana      6.98 ms   p95     12.56 ms
+     episodio        servicio          cama    edad sexo dx     SpO2min FCmax SpO2ult lecturas
+     HOSP-2026-0029  MEDICINA_INTERNA MI-201    61  F   J18.9      87   129     88     540
+     HOSP-2026-0030  PEDIATRIA        PE-101    10  F   A90        96    85     97     180
+     HOSP-2026-0031  MEDICINA_INTERNA MI-202    82  F   I50.0      88   121     89     539
+     HOSP-2026-0032  MEDICINA_INTERNA MI-203    75  M   J44.1      96    85     98     539
+     HOSP-2026-0033  MEDICINA_INTERNA MI-204    51  M   N39.0      96    83     97     540
+     HOSP-2026-0035  MEDICINA_INTERNA MI-205    32  F   N39.0      96    85     97     540
+     HOSP-2026-0036  MEDICINA_INTERNA MI-206    42  M   A90        96   113     97     405
+     mismo resultado en las dos versiones: True
+
+==================== T1. Atomicidad: lo que garantiza cada capa ====================
+  PostgreSQL: admision en MI-201 (ocupada por HOSP-2026-0029) rechazada -> 23505 ux_cama_activa
+              ROLLBACK de toda la transaccion: hospitalizaciones antes 36, despues 36
+  MongoDB:    lote de 5 lecturas con 1 invalida (sin ts) -> BulkWriteError
+              se guardaron 4 de 5: escritura PARCIAL, sin transaccion (aceptable para telemetria, no para una admision)
+
+Metricas guardadas en resultados/metricas.csv

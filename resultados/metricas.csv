@@ -1,0 +1,11 @@
+prueba,motor,mediana_ms,p95_ms,n,lecturas_s
+B1,MongoDB time series,521.9,600.2,5,95799
+B1,PostgreSQL JSONB,2329.4,2470.0,5,21464
+B2,MongoDB,1.19,1.38,15,
+B2,PostgreSQL,0.62,0.7,15,
+B3,MongoDB,2.84,3.23,15,
+B3,PostgreSQL,2.36,2.56,15,
+B4,MongoDB,10.28,10.8,15,
+B4,PostgreSQL,28.51,32.07,15,
+B5,Hibrido PG + MongoDB,10.72,14.68,15,
+B5,Solo PostgreSQL (JSONB),6.98,12.56,15,

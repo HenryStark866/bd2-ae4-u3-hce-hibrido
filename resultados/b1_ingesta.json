@@ -1,0 +1,21 @@
+{
+  "lecturas": 306359,
+  "descartadas": 72,
+  "teleconsultas": 40,
+  "lote": 5000,
+  "mongo_s": 7.98,
+  "pg_s": 14.81,
+  "mongo_lect_s": 38404,
+  "pg_lect_s": 20681,
+  "mongo_buckets": 8012,
+  "mongo_mb_logico": 5.3,
+  "mongo_mb_disco": 2.6,
+  "pg_mb_disco": 88.2,
+  "pg_mb_tabla": 61.8,
+  "por_tipo": {
+    "OXIMETRO_WEARABLE": 112916,
+    "MONITOR_MULTIPARAMETRO": 181118,
+    "BOMBA_INFUSION": 229,
+    "GLUCOMETRO_CGM": 12096
+  }
+}

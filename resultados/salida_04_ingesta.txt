@@ -1,0 +1,5 @@
+Lecturas generadas: 306359  (descartadas por fuera de rango: 72)  | teleconsultas: 40
+  por tipo: MONITOR_MULTIPARAMETRO=181118, OXIMETRO_WEARABLE=112916, GLUCOMETRO_CGM=12096, BOMBA_INFUSION=229
+B1 MongoDB   : 306359 lecturas en   7.98 s ->    38404 lecturas/s | disco 2.6 MB (datos+indices; 8012 buckets, 5.3 MB logicos)
+B1 PostgreSQL: 306359 lecturas en  14.81 s ->    20681 lecturas/s | disco 88.2 MB (tabla+indices)
+Conteo final: MongoDB 306359 | PostgreSQL 306359

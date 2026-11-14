@@ -1,0 +1,14 @@
+{
+  "grupo": "1",
+  "actividad": "AE4_U3",
+  "modalidad": "Trabajo individual",
+  "fecha": "12 de noviembre de 2026",
+  "video_url": "",
+  "repositorio_url": "https://github.com/HenryStark866/bd2-ae4-u3-hce-hibrido",
+  "integrantes": [
+    {
+      "nombre": "Henry Taborda",
+      "rol": "Diseño de la arquitectura híbrida, esquema PostgreSQL, colecciones MongoDB, ingesta, análisis comparativo, evidencia de IA, informe y video"
+    }
+  ]
+}

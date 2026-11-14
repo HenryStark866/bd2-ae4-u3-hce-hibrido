@@ -1,0 +1,5 @@
+Este es el diagrama de la arquitectura. A la izquierda, los usuarios clínicos escriben en Postgres: admisiones, altas y asignación de dispositivos. Los sensores, en cambio, pasan por un proceso de ingesta que valida los rangos fisiológicos y escribe por lotes en MongoDB.
+
+La llave puente es el identificador del dispositivo y el identificador de la hospitalización. MongoDB nunca guarda el nombre, el documento ni la EPS del paciente: solo el código del episodio, que funciona como un seudónimo.
+
+A la derecha está la aplicación, que une las dos capas. Por ejemplo, el tablero de pacientes activos pide a Postgres los episodios activos, desde una vista que no expone el nombre, pide a MongoDB el resumen de las últimas seis horas, y los une en memoria. No hay llaves foráneas entre los dos motores, así que la coherencia del puente es responsabilidad de la aplicación.

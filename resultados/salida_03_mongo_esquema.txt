@@ -1,0 +1,10 @@
+Base 'hce_telemetria' creada:
+  telemetria                  timeseries  {"timeField":"ts","metaField":"meta","granularity":"seconds","bucketMaxSpanSeconds":3600}
+  system.buckets.telemetria   collection  {"timeField":"ts","metaField":"meta","granularity":"seconds","bucketMaxSpanSeconds":3600}
+  system.views                collection
+  teleconsultas               collection
+  indice telemetria     meta_1_ts_1
+  indice telemetria     ix_dispositivo_ts
+  indice telemetria     ix_episodio_ts
+  indice teleconsultas  _id_
+  indice teleconsultas  ix_teleconsulta_episodio

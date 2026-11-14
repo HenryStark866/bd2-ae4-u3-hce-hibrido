@@ -1,0 +1,5 @@
+Ahora la implementación. Primero la capa ACID. Ejecuto el script del esquema en Postgres: crea diez tablas y diecinueve índices.
+
+Lo más importante está en las restricciones. Hay dos índices únicos parciales sobre las hospitalizaciones activas: uno impide que una cama tenga dos pacientes activos, y otro impide que un paciente tenga dos ingresos activos a la vez. Además hay una vista seudonimizada, que solo muestra edad, sexo, subregión y episodio, y es lo único que se cruza con la telemetría.
+
+Luego cargo los datos. No inventé datos nuevos: son los mismos veinticinco pacientes, nueve profesionales, treinta camas y treinta y seis hospitalizaciones de la unidad tres, con los mismos identificadores. Todo se carga en una sola transacción. Cada episodio recibe los dispositivos que su servicio justifica: oxímetro para todos, monitor en medicina interna y cuidados intensivos, glucómetro continuo si tiene diabetes, y bomba de infusión en los casos graves. En total, setenta y seis dispositivos.

@@ -1,0 +1,11 @@
+  cie10                   13
+  medicamento             17
+  paciente                25
+  paciente_alergia        6
+  profesional             9
+  cama                    30
+  hospitalizacion         36
+  dispositivo             76
+  asignacion_dispositivo  76
+  dispositivos por tipo: OXIMETRO_WEARABLE=36, MONITOR_MULTIPARAMETRO=27, GLUCOMETRO_CGM=9, BOMBA_INFUSION=4
+  hospitalizaciones activas: 7
